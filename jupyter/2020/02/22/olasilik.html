@@ -115,7 +115,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      20 min read
+      19 min read
     
 </span></p>
 
@@ -150,7 +150,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2">
 <a href="#Temel-Olas%C4%B1l%C4%B1k-Kuram%C4%B1">Temel Olasılık Kuramı </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Axioms-of-Probability-Theory">Axioms of Probability Theory </a></li>
+<li class="toc-entry toc-h3"><a href="#Olas%C4%B1l%C4%B1k-Kuram%C4%B1n%C4%B1n-Aksiyomlar%C4%B1">Olasılık Kuramının Aksiyomları </a></li>
 <li class="toc-entry toc-h3"><a href="#Random-Variables">Random Variables </a></li>
 </ul>
 </li>
@@ -188,21 +188,12 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Makine Öğrenmesi tamamen tahminler üretme işidir. Örneğin klinik geçmişi göz önüne alındığında, bir hastanın gelecek yıl kalp krizi geçirme <em>olasılığını</em> tahmin etmek isteyebiliriz. Anormallik tespitinde, bir uçağın jet motorundan gelen bir dizi okumanın normal çalışma durumunda ne kadar <em>olası</em> olduğunu değerlendirmek isteyebiliriz. Pekiştirmeli öğrenmede, robotun ya da daha genel olarak etmenin bir ortamda akıllıca davranmasını isteriz. Bunun anlamı, mevcut eylemlerin her biri altında yüksek bir ödül alma olasılığını düşünmemiz gerektiğidir. Tavsiye sistemleri inşa ettiğimizde de olasılıkları düşünmemiz gerekir. Örneğin, büyük bir online kitapçı için çalıştığımızı varsayalım. Belirli bir kullanıcının belirli bir kitabı satın alma olasılığını tahmin etmek isteyebiliriz. Tüm bu durumlar için olasılık dilini kullanmalıyız. Bir çok kurs, ana bilim dalları, tezler, kariyerler ve hatta bölümler olasılık bilimine üzerine kurulmuştur. Doğal olarak, bu bölümdeki amacımız tüm olasılık konularını öğretmek değildir. Bunun yerine sıfırdan, size ilk derin öğrenme modellerinizi oluşturmaya başlayabileceğiniz kadar olasılık bilgisi öğretmeyi ve isterseniz konunun kendi kendinize keşfetmeye başlayabileceğiniz kadarlık özünü kavratmak istiyoruz.</p>
-<p>Açık açık ifade etmesek veya somut örnekler vermesek de, önceki bölümlerde olaslığı kullandık. Şimdi ilk örneğimizle başlayaşım: kedi ve köpekleri fotoğraflardan ayırt etmek. Bu basit gelebilir ama aslında zor bir problemdir. İlk olarak, sorunun zorluğu görüntünün çözünürlüğüne bağlı olabilir.</p>
+<p>Makine Öğrenmesi tamamen tahminler üretme işidir. Örneğin klinik geçmişi göz önüne alındığında, bir hastanın gelecek yıl kalp krizi geçirme <em>olasılığını</em> tahmin etmek isteyebiliriz. Anormallik tespitinde, bir uçağın jet motorundan gelen bir dizi okumanın normal çalışma için ne kadar <em>olası</em> olduğunu değerlendirmek isteyebiliriz. Pekiştirmeli öğrenmede, robotun ya da daha genel olarak etmenin bir ortamda akıllıca davranmasını isteriz. Bunun anlamı, mevcut eylemlerin her biri altında yüksek bir ödül alma olasılığını düşünmemiz gerektiğidir. Tavsiye sistemleri inşa ettiğimizde de olasılıkları düşünmemiz gerekir. Örneğin, büyük bir online kitapçı için çalıştığımızı varsayalım. Belirli bir kullanıcının belirli bir kitabı satın alma olasılığını tahmin etmek isteyebiliriz. Tüm bu durumlar için olasılık dilini kullanmalıyız. Bir çok kurs, ana bilim dalları, tezler, kariyerler ve hatta bölümler olasılık bilimine üzerine kurulmuştur. Doğal olarak, bu bölümdeki amacımız tüm olasılık konularını öğretmek değildir. Bunun yerine sıfırdan, size ilk derin öğrenme modellerinizi oluşturmaya başlayabileceğiniz kadar olasılık bilgisi öğretmeyi ve isterseniz konunun kendi kendinize keşfetmeye başlayabileceğiniz kadarlık özünü kavratmak istiyoruz.</p>
+<p>Açık açık ifade etmesek veya somut örnekler vermesek de, önceki bölümlerde olaslığı kullandık. Şimdi ilk örneğimizle başlayaşım: kedi ve köpekleri fotoğraflardan ayırt etmek. Bu basit gelebilir ama aslında zor bir problemdir. Sorunun zorluğu ilk planda görüntünün çözünürlüğüne bağlı olabilir.</p>
 <p><img src="https://github.com/d2l-ai/d2l-en-colab/blob/master/img/cat_dog_pixels.png?raw=1" alt="Images of varying resolutions ($10 \times 10$, $20 \times 20$, $40 \times 40$, $80 \times 80$, and $160 \times 160$ pixels)."></p>
-<p>Şekilde görüldüğü gibi, $160 \times 160$ piksel çözünürlüğe sahip resimlerde kedi ve köpekleri seçmek bizim için kolay olsa da, $40 \times 40$ piksel için zor hata $10 \times 10$ piksel için imkansızdır. In
-other words, our ability to tell cats and dogs apart at a large distance (and thus low resolution) might approach uninformed guessing. Probability gives us a
-formal way of reasoning about our level of certainty.
-If we are completely sure
-that the image depicts a cat, we say that the <em>probability</em> that the corresponding label $y$ is "cat", denoted $P(y=$ "cat"$)$ equals $1$.
-If we had no evidence to suggest that $y =$ "cat" or that $y =$ "dog", then we might say that the two possibilities were equally
-<em>likely</em> expressing this as $P(y=$ "cat"$) = P(y=$ "dog"$) = 0.5$. If we were reasonably
-confident, but not sure that the image depicted a cat, we might assign a
-probability $0.5  &lt; P(y=$ "cat"$) &lt; 1$.</p>
-<p>Now consider the second case: given some weather monitoring data, we want to predict the probability that it will rain in Taipei tomorrow. If it is summertime, the rain might come with probability 0.5.</p>
-<p>In both cases, we have some value of interest. And in both cases we are uncertain about the outcome.
-But there is a key difference between the two cases. In this first case, the image is in fact either a dog or a cat, and we just do not know which. In the second case, the outcome may actually be a random event, if you believe in such things (and most physicists do). So probability is a flexible language for reasoning about our level of certainty, and it can be applied effectively in a broad set of contexts.</p>
+<p>Şekilde görüldüğü gibi, $160 \times 160$ piksel çözünürlüğe sahip resimlerde kedi ve köpekleri seçmek bizim için kolay olsa da, $40 \times 40$ piksel için zor hata $10 \times 10$ piksel için imkansızdır. Diğer bir ifadeyle, uzaklaştıkça yani çözünürlük azaldıkça kedi ve köpek resimlerini ayırt etmemiz yazı-tura atmaya dönüşmeye başlar. Olasılık sayesinde belirsizlik düzeyini matematiksel olarak ifade edebiliriz. Eğer resmim kedi resmi olduğundan tam olarak eminsek, resme karşılık gelen $y$ etiketinin "kedi" olma olasılığı yani $P(y=$ "kedi"$)$  ifadesi $1$ sayısına eşittir deriz. Fakat $y =$ "kedi" veya that $y =$ "köpek" diyebilmek için herhangi bir bulgu yok ise, olasılıkların eşit olduğunu söyler ve bunu $P(y=$ "kedi"$) = P(y=$ "köpek"$) = 0.5$ şeklinde gösteririz. Eğer resmin kedi resminden olduğu yüksek ihtimal ise fakat kesin emin değilsek, olasılığı $0.5  &lt; P(y=$ "kedi"$) &lt; 1$ gibi bir değer olarak tahmin ederiz.</p>
+<p>Şimdi diğer bir örnek verelim. Hava durumu izleme verilerinden yarın bir İstanbul'da yağmur yağma olaslığını tahmin etmek istiyoruz. Yaz aylarındaysak yağmur yaklaşık 0.5 olasılıkla yağar.</p>
+<p>İki örnekte de bir şeyin alacağı değerle ilgileniyoruz. Ayrıca ikisinde de sonuçtan kesin emin değiliz. Fakat iki durum arasında kritik bir farklılık var. İlk durumda resim ya kedidir ya da köpektir ve hangisi olduğunu kesin bilmiyoruz. İkinci durumda sonuç rastgele bir olay gibi görülebilir. Dolayısıyla olasılık, belirsizliğin esnek dilidir ve birçok farklı durumda etkin bir şekilde kullanılabilir.</p>
 <h2 id="Temel-Olasılık-Kuramı">
 <a class="anchor" href="#Temel-Olas%C4%B1l%C4%B1k-Kuram%C4%B1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Temel Olasılık Kuramı<a class="anchor-link" href="#Temel-Olas%C4%B1l%C4%B1k-Kuram%C4%B1"> </a>
 </h2>
@@ -3925,8 +3916,8 @@ z
 The dashed black line gives the true underlying probability.
 As we get more data by conducting more experiments,
 the $6$ solid curves converge towards the true probability.</p>
-<h3 id="Axioms-of-Probability-Theory">
-<a class="anchor" href="#Axioms-of-Probability-Theory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Axioms of Probability Theory<a class="anchor-link" href="#Axioms-of-Probability-Theory"> </a>
+<h3 id="Olasılık-Kuramının-Aksiyomları">
+<a class="anchor" href="#Olas%C4%B1l%C4%B1k-Kuram%C4%B1n%C4%B1n-Aksiyomlar%C4%B1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Olasılık Kuramının Aksiyomları<a class="anchor-link" href="#Olas%C4%B1l%C4%B1k-Kuram%C4%B1n%C4%B1n-Aksiyomlar%C4%B1"> </a>
 </h3>
 <p>When dealing with the rolls of a die,
 we call the set $\mathcal{S} = \{1, 2, 3, 4, 5, 6\}$ the <em>sample space</em> or <em>outcome space</em>, where each element is an <em>outcome</em>.
