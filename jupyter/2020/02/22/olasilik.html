@@ -3806,7 +3806,7 @@ olayı veya tek sayı gelmesi yani $\{1, 3, 5\}$ olayı gibi. Eğer gözlem sonu
 <p>Matematiksel olarak <em>olasılık</em>, kümelere reel sayı karşılık getiren bir fonksiyon olarak tanımlanır. $\mathcal{S}$ örneklem uzayındaki bir $\mathcal{A}$ olayının olasılığı $P(\mathcal{A})$ ile gösterilir ve aşağıdaki özellikleri sağlar.</p>
 <ul>
 <li>Herhangi bir $\mathcal{A}$ olayının olasılığı negatif olamaz, yani $P(\mathcal{A}) \geq 0$;</li>
-<li>Öreklem uzayının olasılığı $1$ olmalıdır, yani $P(\mathcal{S}) = 1$;</li>
+<li>Örneklem uzayının olasılığı $1$ olmalıdır, yani $P(\mathcal{S}) = 1$;</li>
 <li>
 <em>Karşılıklı ayrık</em> olan yani $i \neq j$ için $\mathcal{A}_i \cap \mathcal{A}_j = \emptyset$ biçimindeki sayılabilir çoklukta $\mathcal{A}_1, \mathcal{A}_2, \ldots$ olayları için herhangi birisinin gerçekleşmesi olasılığı olasılıklarının toplamına eşittir, yani $P(\bigcup_{i=1}^{\infty} \mathcal{A}_i) = \sum_{i=1}^{\infty} P(\mathcal{A}_i)$.</li>
 </ul>
@@ -3824,35 +3824,28 @@ olayı veya tek sayı gelmesi yani $\{1, 3, 5\}$ olayı gibi. Eğer gözlem sonu
 <h3 id="Ortak-Olasılık-(Joint-Probability)">
 <a class="anchor" href="#Ortak-Olas%C4%B1l%C4%B1k-(Joint-Probability)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ortak Olasılık (Joint Probability)<a class="anchor-link" href="#Ortak-Olas%C4%B1l%C4%B1k-(Joint-Probability)"> </a>
 </h3>
-<p>İlkine <em>ortak olasılık</em> denir ve $P(A = a, B=b)$ ile gösterilir. Belli $a$ ve $b$ değerleri için ortak olasılık bize aynı anda $A=a$ ve $B=b$ olması olasılığını verir. Burada her $a$ ve $b$ için  $P(A=a, B=b) \leq P(A=a)$ olur. Çünkü</p>
-<p>The first is called the <em>joint probability</em> $P(A = a, B=b)$. Given any values $a$ and $b$, the joint probability lets us answer, what is the probability that $A=a$ and $B=b$ simultaneously? 
-Note that for any values $a$ and $b$, $P(A=a, B=b) \leq P(A=a)$.
-This has to be the case, since for $A=a$ and $B=b$ to happen, $A=a$ has to happen <em>and</em> $B=b$ also has to happen (and vice versa). Thus, $A=a$ and $B=b$ cannot be more likely than $A=a$ or $B=b$ individually.</p>
+<p>İlkine <em>ortak olasılık</em> denir ve $P(A = a, B=b)$ ile gösterilir. Belli $a$ ve $b$ değerleri için ortak olasılık bize aynı anda $A=a$ ve $B=b$ olması olasılığını verir. Burada her $a$ ve $b$ için  $P(A=a, B=b) \leq P(A=a)$ olur. Çünkü aynı anda $A=a$ ve $B=b$ olması için ayrı ayrı $A=a$ olmalı ve $B=b$ olmalıdır. Dolayısıyla herbirinin ayrı ayrı olması birlikte olmalarından daha muhtemeldir.</p>
 <h3 id="Şartlı-Olasılık-(Conditional-Probability)">
 <a class="anchor" href="#%C5%9Eartl%C4%B1-Olas%C4%B1l%C4%B1k-(Conditional-Probability)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Şartlı Olasılık (Conditional Probability)<a class="anchor-link" href="#%C5%9Eartl%C4%B1-Olas%C4%B1l%C4%B1k-(Conditional-Probability)"> </a>
 </h3>
-<p>This brings us to an interesting ratio: $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$. We call this ratio a <em>conditional probability</em>
-and denote it by $P(B=b \mid A=a)$: it is the probability of $B=b$, provided that
-$A=a$ has occurred.</p>
+<p>Yukarıdaki eşitsizlikten dolayı $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$ elde edilir. Bu orana <em>şartlı olasılık</em> denir ve $P(B=b \mid A=a)$ ile gösterilir. Anlamı da, $A=a$ durumunda $B=b$ olması olasılığıdır.</p>
 <h3 id="Bayes-Teoremi">
 <a class="anchor" href="#Bayes-Teoremi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayes Teoremi<a class="anchor-link" href="#Bayes-Teoremi"> </a>
 </h3>
-<p>Using the definition of conditional probabilities, we can derive one of the most useful and celebrated equations in statistics: <em>Bayes' theorem</em>.
-It goes as follows.
-By construction, we have the <em>multiplication rule</em> that $P(A, B) = P(B \mid A) P(A)$. By symmetry, this also holds for $P(A, B) = P(A \mid B) P(B)$. Assume that $P(B) &gt; 0$. Solving for one of the conditional variables we get</p>
+<p>Şartlı olasılık tanımını kullanarak İstatistiğin en önemli ve gerekli denklemlerinden birisini, yani Bayes Teoremi elde edilebilir. Şöyle ki, tanımdan <em>çarpım kuralı</em> yani $P(A, B) = P(B \mid A) P(A)$ elde edilir. $P(A, B)=P(B, A)$ olduğundan aynı zamanda $P(A, B) = P(A \mid B) P(B)$ yazılabilir. $P(B) &gt; 0$ kabul edilerek ve sadeleştirmeyle</p>
 <p>
-$$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
+$$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}$$
 </p>
-<p>Note that here we use the more compact notation where $P(A, B)$ is a <em>joint distribution</em> and $P(A \mid B)$ is a <em>conditional distribution</em>. Such distributions can be evaluated for particular values $A = a, B=b$.</p>
+<p>olur. Yukarıda $P(A, B)$ gösteimi ile belirtilen dağılıma <em>ortak dağılım</em>, $P(A \mid B)$ ile gösterilen dağılıma da <em>şartlı dağılım</em> denir. Bu dağılımların özel olarak $A = a, B=b$ için değerleri hesaplanabilir.</p>
 <h3 id="Ayırma-(Marginalization)">
 <a class="anchor" href="#Ay%C4%B1rma-(Marginalization)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ayırma (Marginalization)<a class="anchor-link" href="#Ay%C4%B1rma-(Marginalization)"> </a>
 </h3>
-<p>Bayes' theorem is very useful if we want to infer one thing from the other, say cause and effect, but we only know the properties in the reverse direction, as we will see later in this section. One important operation that we need, to make this work, is <em>marginalization</em>.
-It is the operation of determining $P(B)$ from $P(A, B)$. We can see that the probability of $B$ amounts to accounting for all possible choices of $A$ and aggregating the joint probabilities over all of them:</p>
+<p>Bayes Teoremi şeyden diğeri için çıkarım yapmada çok yararlıdır. Neden-sonuç ilişkisi gibi durumlarda nasıl kullanılacağını sonraki bölümlerde göreceğiz. Bunun için <em>ayırma</em> işlemine ihtiyacımız var.</p>
+<p>Bayes' theorem is very useful if we want to infer one thing from the other, say cause and effect, but we only know the properties in the reverse direction, as we will see later in this section. One important operation that we need, to make this work, is <em>marginalization</em>. Bu işlem ile $P(A, B)$ yardımıyla $P(B)$ elde edilmektedir. $B$ rassal değişkeninin olasılığı, $A$ rassal değişkeninin alabileceği her değer için ortak olasılığıntolamıdır. Buna <em>toplam kuralı denir</em> ve</p>
 <p>
-$$P(B) = \sum_{A} P(A, B),$$
+$$P(B) = \sum_{A} P(A, B)$$
 </p>
-<p>which is also known as the <em>sum rule</em>. The probability or distribution as a result of marginalization is called a <em>marginal probability</em> or a <em>marginal distribution</em>.</p>
+<p>biçiminde formülleştirilir. Ayrışma sonucunda elde edilen olasılığa ya da bunun dağılımına <em>marjinal olasılık</em> ya da <em>marjinal dağılım</em> denir.</p>
 <h3 id="Bağımsızlık-(Independence)">
 <a class="anchor" href="#Ba%C4%9F%C4%B1ms%C4%B1zl%C4%B1k-(Independence)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bağımsızlık (Independence)<a class="anchor-link" href="#Ba%C4%9F%C4%B1ms%C4%B1zl%C4%B1k-(Independence)"> </a>
 </h3>
