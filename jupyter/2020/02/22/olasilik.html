@@ -3909,7 +3909,7 @@ $$$$\begin{aligned}
 =&amp; P(D_1 = 1 \mid H = 1) P(D_2 = 1 \mid H = 1)  \\
 =&amp; 0.98.
 \end{aligned}
-$$<p>Şimdi ayırma ve çarım kuralını uygulayabiliriz:</p>
+$$<p>Şimdi ayırma ve çarpım kuralını uygulayabiliriz:</p>
 $$\begin{aligned}
 &amp;P(D_1 = 1, D_2 = 1) \\
 =&amp; P(D_1 = 1, D_2 = 1, H = 0) + P(D_1 = 1, D_2 = 1, H = 1)  \\
@@ -3926,23 +3926,18 @@ $$<p>elde edilir. Yani ikinci test çok daha emin olmamızı sağladı. İkinci 
 <h2 id="Beklenen-Değer-ve-Varyans-(Expectation-and-Variance)">
 <a class="anchor" href="#Beklenen-De%C4%9Fer-ve-Varyans-(Expectation-and-Variance)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beklenen Değer ve Varyans (Expectation and Variance)<a class="anchor-link" href="#Beklenen-De%C4%9Fer-ve-Varyans-(Expectation-and-Variance)"> </a>
 </h2>
-<p>To summarize key characteristics of probability distributions,
-we need some measures.
-The <em>expectation</em> (or average) of the random variable $X$ is denoted as</p>
+<p>Olasılık dağılımlarının belirgin özelliklerini özetlemek için bazı ölçümlere ihtiyaç vardır. Bir $X$ rassal değişkeni için <em>beklenen değer</em> (ya da ortalama),</p>
 <p>
-$$E[X] = \sum_{x} x P(X = x).$$
+$$E[X] = \sum_{x} x P(X = x)$$
 </p>
-<p>When the input of a function $f(x)$ is a random variable drawn from the distribution $P$ with different values $x$,
-the expectation of $f(x)$ is computed as</p>
+<p>şeklinde gösterilir ve tanımlanır. Eğer bir $f(x)$ fonksiyonunun girdileri $P$ dağılımına sahip bir rassal değişkende geliyorsa bu fonksiyonun beklenen değeri</p>
 <p>
-$$E_{x \sim P}[f(x)] = \sum_x f(x) P(x).$$
+$$E_{x \sim P}[f(x)] = \sum_x f(x) P(x)$$
 </p>
-<p>In many cases we want to measure by how much the random variable $X$ deviates from its expectation. This can be quantified by the variance</p>
+<p>olarak tanımlanır.</p>
+<p>Genellikle $X$ rassal değişkeninin ortalamadan ne kadar satığını bilmek isteriz. Bunu aşağıda tanımlanan <em>varyans</em> ile yaparız:</p>
 $$\mathrm{Var}[X] = E\left[(X - E[X])^2\right] =
-E[X^2] - E[X]^2.$$<p>Its square root is called the <em>standard deviation</em>.
-The variance of a function of a random variable measures
-by how much the function deviates from the expectation of the function,
-as different values $x$ of the random variable are sampled from its distribution:</p>
+E[X^2] - E[X]^2.$$<p>Varyansın karekökü <em>standart sapma</em> olarak adlandırılır. Rassal değişkenin bir fonksiyonu için varyans benzer şekilde tanımlanır ve dağılımdan farklı $x$ örneklemleri alındığında fonksiyonun ortalamasından ne kadar saptığını gösterir:</p>
 <p>
 $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 </p>
@@ -3950,18 +3945,18 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 <a class="anchor" href="#%C3%96zet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Özet<a class="anchor-link" href="#%C3%96zet"> </a>
 </h2>
 <ul>
-<li>We can sample from probability distributions.</li>
-<li>We can analyze multiple random variables using joint distribution, conditional distribution, Bayes' theorem, marginalization, and independence assumptions.</li>
-<li>Expectation and variance offer useful measures to summarize key characteristics of probability distributions.</li>
+<li>Olasılık dağılımında örneklem alabiliriz. </li>
+<li>Birçok rassal değişkeni ortak dağılım, koşullu dağılım, Bayes Kuralı, ayırma ve bağımsızlık kavramları yardımıyla bir arada analiz edebiliriz.</li>
+<li>Ortalama ve varyans olasılık dağılımının belirgin özelliklerini özetlemek için yararlı araçlardır. </li>
 </ul>
 <h2 id="Alıştırmalar">
 <a class="anchor" href="#Al%C4%B1%C5%9Ft%C4%B1rmalar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alıştırmalar<a class="anchor-link" href="#Al%C4%B1%C5%9Ft%C4%B1rmalar"> </a>
 </h2>
 <ol>
-<li>We conducted $m=500$ groups of experiments where each group draws $n=10$ samples. Vary $m$ and $n$. Observe and analyze the experimental results.</li>
-<li>Given two events with probability $P(\mathcal{A})$ and $P(\mathcal{B})$, compute upper and lower bounds on $P(\mathcal{A} \cup \mathcal{B})$ and $P(\mathcal{A} \cap \mathcal{B})$. (Hint: display the situation using a <a href="https://en.wikipedia.org/wiki/Venn_diagram">Venn Diagram</a>.)</li>
-<li>Assume that we have a sequence of random variables, say $A$, $B$, and $C$, where $B$ only depends on $A$, and $C$ only depends on $B$, can you simplify the joint probability $P(A, B, C)$? (Hint: this is a <a href="https://en.wikipedia.org/wiki/Markov_chain">Markov Chain</a>.)</li>
-<li>In :numref:<code>subsec_probability_hiv_app</code>, the first test is more accurate. Why not just run the first test a second time?</li>
+<li>Deneyimizde $n=10$ boyutunda örneklem için $m=500$ grup aldık. Siz de $m$ ve $n$ için farklı değerler alarak inceleme yapın. </li>
+<li>$P(\mathcal{A})$ ve $P(\mathcal{B})$ olasılıklarına sahip olayları göz önüne alarak $P(\mathcal{A} \cup \mathcal{B})$ ve $P(\mathcal{A} \cap \mathcal{B})$ olasılıkları için alt ve üst sınırlar belirleyin. (Venn Şeması ile görebilirsiniz.) </li>
+<li>$A$, $B$, ve $C$ gibi üç rassal değişkenimiz var. $B$ sadece $A$ ile bağımlı ve $C$ sadece $B$ ile bağımlı. $P(A, B, C)$ olasılığını nasıl sadeleştirirsiniz? (Bu bir <a href="https://en.wikipedia.org/wiki/Markov_chain">Markov Zinciri'dir</a>.)</li>
+<li>Uygulamamızda ilk test daha güvenilirdi. Neden ilk testi ikinci kez tekrarlamak iyi bir fikir değildir? </li>
 </ol>
 
 </div>
