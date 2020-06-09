@@ -115,7 +115,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      15 min read
     
 </span></p>
 
@@ -3840,8 +3840,7 @@ $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}$$
 <h3 id="Ayırma-(Marginalization)">
 <a class="anchor" href="#Ay%C4%B1rma-(Marginalization)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ayırma (Marginalization)<a class="anchor-link" href="#Ay%C4%B1rma-(Marginalization)"> </a>
 </h3>
-<p>Bayes Teoremi şeyden diğeri için çıkarım yapmada çok yararlıdır. Neden-sonuç ilişkisi gibi durumlarda nasıl kullanılacağını sonraki bölümlerde göreceğiz. Bunun için <em>ayırma</em> işlemine ihtiyacımız var.</p>
-<p>Bayes' theorem is very useful if we want to infer one thing from the other, say cause and effect, but we only know the properties in the reverse direction, as we will see later in this section. One important operation that we need, to make this work, is <em>marginalization</em>. Bu işlem ile $P(A, B)$ yardımıyla $P(B)$ elde edilmektedir. $B$ rassal değişkeninin olasılığı, $A$ rassal değişkeninin alabileceği her değer için ortak olasılığıntolamıdır. Buna <em>toplam kuralı denir</em> ve</p>
+<p>Bayes Teoremi bir şeyden diğeri için çıkarım yapmada çok yararlıdır. Neden-sonuç ilişkisi gibi durumlarda nasıl kullanılacağını sonraki bölümlerde göreceğiz. Bunun için <em>ayırma</em> işlemine ihtiyacımız var. Bu işlem ile $P(A, B)$ yardımıyla $P(B)$ elde edilmektedir. $B$ rassal değişkeninin olasılığı, $A$ rassal değişkeninin alabileceği her değer için ortak olasılıkların toplamıdır. Buna <em>toplam kuralı denir</em> ve</p>
 <p>
 $$P(B) = \sum_{A} P(A, B)$$
 </p>
@@ -3854,15 +3853,11 @@ $$P(B) = \sum_{A} P(A, B)$$
 <h3 id="Uygulamalar">
 <a class="anchor" href="#Uygulamalar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uygulamalar<a class="anchor-link" href="#Uygulamalar"> </a>
 </h3>
-<p><img class="emoji" title=":label:" alt=":label:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f7.png" height="20" width="20"><code>subsec_probability_hiv_app</code></p>
-<p>Let us put our skills to the test. Assume that a doctor administers an AIDS test to a patient. This test is fairly accurate and it fails only with 1% probability if the patient is healthy but reporting him as diseased. Moreover,
-it never fails to detect HIV if the patient actually has it. We use $D_1$ to indicate the diagnosis ($1$ if positive and $0$ if negative) and $H$ to denote the HIV status ($1$ if positive and $0$ if negative).
-:numref:<code>conditional_prob_D1</code> lists such conditional probabilities.</p>
-<p>:Conditional probability of $P(D_1 \mid H)$.</p>
+<p>Şimdi öğrensiklerimizi sınayalım. Bir doktor hastasına AIDS testi uyguluyor. Bu test oldukça güvenilir ve sağlam bir kişiyi AIDS hastası göstermesi olasılığı %1. Hatta HIV virüsü taşıyan bir kişiyi tesit etmede kesinlikle hata yapmıyor. $D_1$ ile teşhisi gösterirelim, yani pozitif teşhis için $1$, negatif teşhis için $0$ değerini alsın. $H$ ile de HIV virüsü taşımayı gösterelim, dolayısıyla HIV pozitif için $1$, HIV negatif için $0$ değeri alsın. Aşağıdaki tablo eldeki verileri özetler.</p>
 <table>
 <thead>
 <tr>
-<th>Conditional probability</th>
+<th>Şartlı Olasılık</th>
 <th>$H=1$</th>
 <th>$H=0$</th>
 </tr>
@@ -3880,7 +3875,6 @@ it never fails to detect HIV if the patient actually has it. We use $D_1$ to ind
 </tr>
 </tbody>
 </table>
-<p><img class="emoji" title=":label:" alt=":label:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f7.png" height="20" width="20"><code>conditional_prob_D1</code></p>
 <p>Note that the column sums are all 1 (but the row sums are not), since the conditional probability needs to sum up to 1, just like the probability. Let us work out the probability of the patient having AIDS if the test comes back positive, i.e., $P(H = 1 \mid D_1 = 1)$. Obviously this is going to depend on how common the disease is, since it affects the number of false alarms. Assume that the population is quite healthy, e.g., $P(H=1) = 0.0015$. To apply Bayes' theorem, we need to apply marginalization and the multiplication rule to determine</p>
 $$\begin{aligned}
 &amp;P(D_1 = 1) \\
