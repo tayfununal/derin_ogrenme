@@ -85,31 +85,25 @@ window.onload = wrap_img;
 </script>
 </head><body><header class="site-header">
 
-  <div class="wrapper">
-<a class="site-title" rel="author" href="/derin_ogrenme/">Derin Öğrenme Kitabı</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger">
+  <div class="wrapper"><a class="site-title" rel="author" href="/derin_ogrenme/">Derin Öğrenme Kitabı</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
         <label for="nav-trigger">
           <span class="menu-icon">
-            <svg viewbox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
             </svg>
           </span>
         </label>
 
-        <div class="trigger">
-<a class="page-link" href="/derin_ogrenme/bilgi/">Bilgi</a><a class="page-link" href="/derin_ogrenme/arama/">Arama</a>
-</div>
-      </nav>
-</div>
+        <div class="trigger"><a class="page-link" href="/derin_ogrenme/bilgi/">Bilgi</a><a class="page-link" href="/derin_ogrenme/arama/">Arama</a></div>
+      </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Olasılık</h1>
-<p class="page-description">Makine Öğrenmesi ve Derin Öğrenme için gerekli olasılık konuları.</p>
-<p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-02-22T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Olasılık</h1><p class="page-description">Makine Öğrenmesi ve Derin Öğrenme için gerekli olasılık konuları.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-02-22T00:00:00-06:00" itemprop="datePublished">
         Feb 22, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -133,13 +127,13 @@ window.onload = wrap_img;
 
           <div class="px-2">
     <a href="https://mybinder.org/v2/gh/unverciftci/derin_ogrenme/master?filepath=_notebooks%2F2020-02-22-olasilik.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/derin_ogrenme/assets/badges/binder.svg" alt="Open In Binder">
+        <img class="notebook-badge-image" src="/derin_ogrenme/assets/badges/binder.svg" alt="Open In Binder"/>
     </a>
 </div>
 
           <div class="px-2">
     <a href="https://colab.research.google.com/github/unverciftci/derin_ogrenme/blob/master/_notebooks/2020-02-22-olasilik.ipynb" target="_blank">
-        <img class="notebook-badge-image" src="/derin_ogrenme/assets/badges/colab.svg" alt="Open In Colab">
+        <img class="notebook-badge-image" src="/derin_ogrenme/assets/badges/colab.svg" alt="Open In Colab"/>
     </a>
 </div>
         </div>
@@ -147,29 +141,26 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul class="section-nav">
-<li class="toc-entry toc-h2">
-<a href="#Temel-Olas%C4%B1l%C4%B1k-Kuram%C4%B1">Temel Olasılık Kuramı </a>
+<li class="toc-entry toc-h2"><a href="#Temel-Olasılık-Kuramı">Temel Olasılık Kuramı </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Olas%C4%B1l%C4%B1k-Kuram%C4%B1n%C4%B1n-Aksiyomlar%C4%B1">Olasılık Kuramının Aksiyomları </a></li>
-<li class="toc-entry toc-h3"><a href="#Rassal-De%C4%9Fi%C5%9Fkenler">Rassal Değişkenler </a></li>
+<li class="toc-entry toc-h3"><a href="#Olasılık-Kuramının-Aksiyomları">Olasılık Kuramının Aksiyomları </a></li>
+<li class="toc-entry toc-h3"><a href="#Rassal-Değişkenler">Rassal Değişkenler </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2">
-<a href="#Rassal-De%C4%9Fi%C5%9Fkenlerin-Birbiriyle-%C4%B0li%C5%9Fkileri">Rassal Değişkenlerin Birbiriyle İlişkileri </a>
+<li class="toc-entry toc-h2"><a href="#Rassal-Değişkenlerin-Birbiriyle-İlişkileri">Rassal Değişkenlerin Birbiriyle İlişkileri </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Ortak-Olas%C4%B1l%C4%B1k-(Joint-Probability)">Ortak Olasılık (Joint Probability) </a></li>
-<li class="toc-entry toc-h3"><a href="#%C5%9Eartl%C4%B1-Olas%C4%B1l%C4%B1k-(Conditional-Probability)">Şartlı Olasılık (Conditional Probability) </a></li>
+<li class="toc-entry toc-h3"><a href="#Ortak-Olasılık-(Joint-Probability)">Ortak Olasılık (Joint Probability) </a></li>
+<li class="toc-entry toc-h3"><a href="#Koşullu-Olasılık-(Conditional-Probability)">Koşullu Olasılık (Conditional Probability) </a></li>
 <li class="toc-entry toc-h3"><a href="#Bayes-Teoremi">Bayes Teoremi </a></li>
-<li class="toc-entry toc-h3"><a href="#Ay%C4%B1rma-(Marginalization)">Ayırma (Marginalization) </a></li>
-<li class="toc-entry toc-h3"><a href="#Ba%C4%9F%C4%B1ms%C4%B1zl%C4%B1k-(Independence)">Bağımsızlık (Independence) </a></li>
+<li class="toc-entry toc-h3"><a href="#Ayırma-(Marginalization)">Ayırma (Marginalization) </a></li>
+<li class="toc-entry toc-h3"><a href="#Bağımsızlık-(Independence)">Bağımsızlık (Independence) </a></li>
 <li class="toc-entry toc-h3"><a href="#Uygulamalar">Uygulamalar </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#Beklenen-De%C4%9Fer-ve-Varyans-(Expectation-and-Variance)">Beklenen Değer ve Varyans (Expectation and Variance) </a></li>
-<li class="toc-entry toc-h2"><a href="#%C3%96zet">Özet </a></li>
-<li class="toc-entry toc-h2"><a href="#Al%C4%B1%C5%9Ft%C4%B1rmalar">Alıştırmalar </a></li>
-</ul>
-<!--
+<li class="toc-entry toc-h2"><a href="#Beklenen-Değer-ve-Varyans-(Expectation-and-Variance)">Beklenen Değer ve Varyans (Expectation and Variance) </a></li>
+<li class="toc-entry toc-h2"><a href="#Özet">Özet </a></li>
+<li class="toc-entry toc-h2"><a href="#Alıştırmalar">Alıştırmalar </a></li>
+</ul><!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
@@ -3825,18 +3816,18 @@ olayı veya tek sayı gelmesi yani $\{1, 3, 5\}$ olayı gibi. Eğer gözlem sonu
 <a class="anchor" href="#Ortak-Olas%C4%B1l%C4%B1k-(Joint-Probability)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ortak Olasılık (Joint Probability)<a class="anchor-link" href="#Ortak-Olas%C4%B1l%C4%B1k-(Joint-Probability)"> </a>
 </h3>
 <p>İlkine <em>ortak olasılık</em> denir ve $P(A = a, B=b)$ ile gösterilir. Belli $a$ ve $b$ değerleri için ortak olasılık bize aynı anda $A=a$ ve $B=b$ olması olasılığını verir. Burada her $a$ ve $b$ için  $P(A=a, B=b) \leq P(A=a)$ olur. Çünkü aynı anda $A=a$ ve $B=b$ olması için ayrı ayrı $A=a$ olmalı ve $B=b$ olmalıdır. Dolayısıyla herbirinin ayrı ayrı olması birlikte olmalarından daha muhtemeldir.</p>
-<h3 id="Şartlı-Olasılık-(Conditional-Probability)">
-<a class="anchor" href="#%C5%9Eartl%C4%B1-Olas%C4%B1l%C4%B1k-(Conditional-Probability)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Şartlı Olasılık (Conditional Probability)<a class="anchor-link" href="#%C5%9Eartl%C4%B1-Olas%C4%B1l%C4%B1k-(Conditional-Probability)"> </a>
+<h3 id="Koşullu-Olasılık-(Conditional-Probability)">
+<a class="anchor" href="#Ko%C5%9Fullu-Olas%C4%B1l%C4%B1k-(Conditional-Probability)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Koşullu Olasılık (Conditional Probability)<a class="anchor-link" href="#Ko%C5%9Fullu-Olas%C4%B1l%C4%B1k-(Conditional-Probability)"> </a>
 </h3>
-<p>Yukarıdaki eşitsizlikten dolayı $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$ elde edilir. Bu orana <em>şartlı olasılık</em> denir ve $P(B=b \mid A=a)$ ile gösterilir. Anlamı da, $A=a$ durumunda $B=b$ olması olasılığıdır.</p>
+<p>Yukarıdaki eşitsizlikten dolayı $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$ elde edilir. Bu orana <em>koşullu olasılık</em> denir ve $P(B=b \mid A=a)$ ile gösterilir. Anlamı da, $A=a$ durumunda $B=b$ olması olasılığıdır.</p>
 <h3 id="Bayes-Teoremi">
 <a class="anchor" href="#Bayes-Teoremi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayes Teoremi<a class="anchor-link" href="#Bayes-Teoremi"> </a>
 </h3>
-<p>Şartlı olasılık tanımını kullanarak İstatistiğin en önemli ve gerekli denklemlerinden birisini, yani Bayes Teoremi elde edilebilir. Şöyle ki, tanımdan <em>çarpım kuralı</em> yani $P(A, B) = P(B \mid A) P(A)$ elde edilir. $P(A, B)=P(B, A)$ olduğundan aynı zamanda $P(A, B) = P(A \mid B) P(B)$ yazılabilir. $P(B) &gt; 0$ kabul edilerek ve sadeleştirmeyle</p>
+<p>Koşullu olasılık tanımını kullanarak İstatistiğin en önemli ve gerekli denklemlerinden birisini, yani Bayes Teoremi elde edilebilir. Şöyle ki, tanımdan <em>çarpım kuralı</em> yani $P(A, B) = P(B \mid A) P(A)$ elde edilir. $P(A, B)=P(B, A)$ olduğundan aynı zamanda $P(A, B) = P(A \mid B) P(B)$ yazılabilir. $P(B) &gt; 0$ kabul edilerek ve sadeleştirmeyle</p>
 <p>
 $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}$$
 </p>
-<p>olur. Yukarıda $P(A, B)$ gösteimi ile belirtilen dağılıma <em>ortak dağılım</em>, $P(A \mid B)$ ile gösterilen dağılıma da <em>şartlı dağılım</em> denir. Bu dağılımların özel olarak $A = a, B=b$ için değerleri hesaplanabilir.</p>
+<p>olur. Yukarıda $P(A, B)$ gösteimi ile belirtilen dağılıma <em>ortak dağılım</em>, $P(A \mid B)$ ile gösterilen dağılıma da <em>koşullu dağılım</em> denir. Bu dağılımların özel olarak $A = a, B=b$ için değerleri hesaplanabilir.</p>
 <h3 id="Ayırma-(Marginalization)">
 <a class="anchor" href="#Ay%C4%B1rma-(Marginalization)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ayırma (Marginalization)<a class="anchor-link" href="#Ay%C4%B1rma-(Marginalization)"> </a>
 </h3>
@@ -3849,15 +3840,15 @@ $$P(B) = \sum_{A} P(A, B)$$
 <a class="anchor" href="#Ba%C4%9F%C4%B1ms%C4%B1zl%C4%B1k-(Independence)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bağımsızlık (Independence)<a class="anchor-link" href="#Ba%C4%9F%C4%B1ms%C4%B1zl%C4%B1k-(Independence)"> </a>
 </h3>
 <p>Rassal değişkenler arasında bakılan bir diğer özellik de <em>bağımlılık</em> ya da tersi <em>bağımsızlık</em> durumudur. $A$ ve $B$ gibi iki rassal değişkenin bağımsız olması, $B$ rassal değişkeninin aldığı değerlerin $A$ için herhangi bir bilgi ortaya koymaması olarak özetlenebilir. Bu durumda $P(B \mid A) = P(B)$ olur. İstatistikçiler bağımsızlığı $A \perp  B$ ile gösterir. Bayes Toeremi gereği P(A \mid B) = P(A)$ elde edilir. Diğer hallerde $A$ ve $B$ bağımlıdır. Örneğin iki zarın arka arkaya atılması bağımsız rassal değişkenler verir. Bununla birlikte bir odadaki elektrik düğmesi ile odanın aydınlık olması bağımlıdır. (Elektrik düğmesinin açık olması aydınlık olacağını kesin gerektirmez çünkü düğme bozu olabilir ya da elektrikler kesilebilir.)</p>
-<p>$P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ eşitliğiyle ile $P(A, B) = P(A)P(B)$ eşitliği birbirine denk olduğundan, iki rassal değişkenin bağımsız olması ortak dağılımın bunların dağılımlarının çarpımına eşit olması ile aynı şeydir. Benzer şekilde $A$ ve $B$ rassal değişkenleri $C$ rassal değikenine göre <em>şartlı bağımsızlık</em> tanımı $P(A, B \mid C) = P(A \mid C)P(B \mid C)$ olarak verilebilir ve $A \perp B \mid C$ biçiminde gösterilir.</p>
+<p>$P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ eşitliğiyle ile $P(A, B) = P(A)P(B)$ eşitliği birbirine denk olduğundan, iki rassal değişkenin bağımsız olması ortak dağılımın bunların dağılımlarının çarpımına eşit olması ile aynı şeydir. Benzer şekilde $A$ ve $B$ rassal değişkenleri $C$ rassal değikenine göre <em>koşullu bağımsızlık</em> tanımı $P(A, B \mid C) = P(A \mid C)P(B \mid C)$ olarak verilebilir ve $A \perp B \mid C$ biçiminde gösterilir.</p>
 <h3 id="Uygulamalar">
 <a class="anchor" href="#Uygulamalar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uygulamalar<a class="anchor-link" href="#Uygulamalar"> </a>
 </h3>
-<p>Şimdi öğrensiklerimizi sınayalım. Bir doktor hastasına AIDS testi uyguluyor. Bu test oldukça güvenilir ve sağlam bir kişiyi AIDS hastası göstermesi olasılığı %1. Hatta HIV virüsü taşıyan bir kişiyi tesit etmede kesinlikle hata yapmıyor. $D_1$ ile teşhisi gösterirelim, yani pozitif teşhis için $1$, negatif teşhis için $0$ değerini alsın. $H$ ile de HIV virüsü taşımayı gösterelim, dolayısıyla HIV pozitif için $1$, HIV negatif için $0$ değeri alsın. Aşağıdaki tablo eldeki verileri özetler.</p>
+<p>Şimdi öğrendiklerimizi sınayalım. Bir doktor kendisine başvuran bir kişiye AIDS testi uyguluyor. Bu test oldukça güvenilir ve sağlam bir kişiyi AIDS hastası göstermesi olasılığı %1. Hatta HIV virüsü taşıyan bir kişiyi tesit etmede kesinlikle hata yapmıyor. $D_1$ ile teşhisi gösterirelim, yani pozitif teşhis için $1$, negatif teşhis için $0$ değerini alsın. $H$ ile de HIV virüsü taşımayı gösterelim, dolayısıyla HIV pozitif için $1$, HIV negatif için $0$ değeri alsın. Aşağıdaki tablo eldeki verileri özetler.</p>
 <table>
 <thead>
 <tr>
-<th>Şartlı Olasılık</th>
+<th>Koşullu Olasılık</th>
 <th>$H=1$</th>
 <th>$H=0$</th>
 </tr>
@@ -3875,26 +3866,21 @@ $$P(B) = \sum_{A} P(A, B)$$
 </tr>
 </tbody>
 </table>
-<p>Note that the column sums are all 1 (but the row sums are not), since the conditional probability needs to sum up to 1, just like the probability. Let us work out the probability of the patient having AIDS if the test comes back positive, i.e., $P(H = 1 \mid D_1 = 1)$. Obviously this is going to depend on how common the disease is, since it affects the number of false alarms. Assume that the population is quite healthy, e.g., $P(H=1) = 0.0015$. To apply Bayes' theorem, we need to apply marginalization and the multiplication rule to determine</p>
+<p>Tablodaki sütunların toplamı 1 olmalıdır çünkü koşullu olasılık da bir olasılık dağılımıdır. Doktora başvuran kişinin testi pozitif çıkıyor, bu durumda kişinin AIDS olma olasılığını inceleyelim. Yani $P(H = 1 \mid D_1 = 1)$ değerini hesaplamak istiyoruz. Bu oran hastalığın toplumda ne kadar yaygın olduğuna bağlıdır, çünkü yanlış alarm oranını buradan elde ederiz. Toplumun oldukça sağlıklı olduğunu örneğin $P(H=1) = 0.0015$ olduğunu kabul edelim. Bayes Teoremi'ni uygulamadan önce ayırma ve çarım kuralı ile aşağıdaki hesabı yapalım:</p>
 $$\begin{aligned}
 &amp;P(D_1 = 1) \\
 =&amp; P(D_1=1, H=0) + P(D_1=1, H=1)  \\
 =&amp; P(D_1=1 \mid H=0) P(H=0) + P(D_1=1 \mid H=1) P(H=1) \\
 =&amp; 0.011485.
 \end{aligned}
-$$<p>Thus, we get</p>
+$$<p>Dolayısıyla</p>
 $$\begin{aligned}
-&amp;P(H = 1 \mid D_1 = 1)\\ =&amp; \frac{P(D_1=1 \mid H=1) P(H=1)}{P(D_1=1)} \\ =&amp; 0.1306 \end{aligned}.$$<p>In other words, there is only a 13.06% chance that the patient
-actually has AIDS, despite using a very accurate test.
-As we can see, probability can be counterintuitive.</p>
-<p>What should a patient do upon receiving such terrifying news? Likely, the patient
-would ask the physician to administer another test to get clarity. The second
-test has different characteristics and it is not as good as the first one, as shown in :numref:<code>conditional_prob_D2</code>.</p>
-<p>:Conditional probability of $P(D_2 \mid H)$.</p>
+&amp;P(H = 1 \mid D_1 = 1)\\ =&amp; \frac{P(D_1=1 \mid H=1) P(H=1)}{P(D_1=1)} \\ =&amp; 0.1306 \end{aligned}$$<p>elde edilir. Diğer bir ifadeyle kişinin gerçekten AIDS olma olasılığı sadece %13.06 olarak bulunur. Test oldukça güvenilirdi ama oran düşük çıktı. Olasılık bazen sezgilere aykırı olabiliyor.</p>
+<p>Kişi testi pozitif çıkınca ne yapmalıdır? Büyük ihtimalle farklı bir test daha uygulanacaktır. İkinci test biraz farklı özellikte ve ikincisi kadar iyi değil. Tabloda özelliklerini görelim.</p>
 <table>
 <thead>
 <tr>
-<th>Conditional probability</th>
+<th>Koşullu Olasılık</th>
 <th>$H=1$</th>
 <th>$H=0$</th>
 </tr>
@@ -3912,10 +3898,7 @@ test has different characteristics and it is not as good as the first one, as sh
 </tr>
 </tbody>
 </table>
-<p><img class="emoji" title=":label:" alt=":label:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f7.png" height="20" width="20"><code>conditional_prob_D2</code></p>
-<p>Unfortunately, the second test comes back positive, too.
-Let us work out the requisite probabilities to invoke Bayes' theorem
-by assuming the conditional independence:</p>
+<p>Maalesef ikinci test sonucu da pozitif çıkıyor. İki tstin koşullu olarak bağımsız olduğunu düşünerek Bayes Teoreni'ni uygulayalım:</p>
 $$\begin{aligned}
 &amp;P(D_1 = 1, D_2 = 1 \mid H = 0) \\
 =&amp; P(D_1 = 1 \mid H = 0) P(D_2 = 1 \mid H = 0)  \\
@@ -3926,20 +3909,20 @@ $$$$\begin{aligned}
 =&amp; P(D_1 = 1 \mid H = 1) P(D_2 = 1 \mid H = 1)  \\
 =&amp; 0.98.
 \end{aligned}
-$$<p>Now we can apply marginalization and the multiplication rule:</p>
+$$<p>Şimdi ayırma ve çarım kuralını uygulayabiliriz:</p>
 $$\begin{aligned}
 &amp;P(D_1 = 1, D_2 = 1) \\
 =&amp; P(D_1 = 1, D_2 = 1, H = 0) + P(D_1 = 1, D_2 = 1, H = 1)  \\
 =&amp; P(D_1 = 1, D_2 = 1 \mid H = 0)P(H=0) + P(D_1 = 1, D_2 = 1 \mid H = 1)P(H=1)\\
 =&amp; 0.00176955.
 \end{aligned}
-$$<p>In the end, the probability of the patient having AIDS given both positive tests is</p>
+$$<p>Sonuç olarak kişinin AIDS olma olasılğı hesalanırsa</p>
 $$\begin{aligned}
 &amp;P(H = 1 \mid D_1 = 1, D_2 = 1)\\
 =&amp; \frac{P(D_1 = 1, D_2 = 1 \mid H=1) P(H=1)}{P(D_1 = 1, D_2 = 1)} \\
-=&amp; 0.8307.
+=&amp; 0.8307
 \end{aligned}
-$$<p>That is, the second test allowed us to gain much higher confidence that not all is well. Despite the second test being considerably less accurate than the first one, it still significantly improved our estimate.</p>
+$$<p>elde edilir. Yani ikinci test çok daha emin olmamızı sağladı. İkinci test birincisine göre oldukça az güvenilirdi ama tahminimizi önemli ölçüde geliştirdi.</p>
 <h2 id="Beklenen-Değer-ve-Varyans-(Expectation-and-Variance)">
 <a class="anchor" href="#Beklenen-De%C4%9Fer-ve-Varyans-(Expectation-and-Variance)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beklenen Değer ve Varyans (Expectation and Variance)<a class="anchor-link" href="#Beklenen-De%C4%9Fer-ve-Varyans-(Expectation-and-Variance)"> </a>
 </h2>
@@ -3996,9 +3979,14 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 
 
 
-  </div>
-<!-- from https://github.com/utterance/utterances -->
-<script src="https://utteranc.es/client.js" repo="unverciftci/derin_ogrenme" issue-term="title" label="blogpost-comment" theme="github-light" crossorigin="anonymous" async>
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="unverciftci/derin_ogrenme"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
 </script><a class="u-url" href="/derin_ogrenme/jupyter/2020/02/22/olasilik.html" hidden></a>
 </article>
       </div>
@@ -4022,11 +4010,7 @@ $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
       </div>
     </div>
 
-    <div class="social-links">
-<ul class="social-media-list">
-<li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/derin_ogrenme/assets/minima-social-icons.svg#github"></use></svg></a></li>
-<li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/derin_ogrenme/assets/minima-social-icons.svg#twitter"></use></svg></a></li>
-</ul>
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/derin_ogrenme/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/derin_ogrenme/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
 </div>
 
   </div>
