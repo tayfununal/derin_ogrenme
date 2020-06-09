@@ -115,7 +115,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      17 min read
+      16 min read
     
 </span></p>
 
@@ -157,17 +157,17 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2">
 <a href="#Rassal-De%C4%9Fi%C5%9Fkenlerin-Birbiriyle-%C4%B0li%C5%9Fkileri">Rassal Değişkenlerin Birbiriyle İlişkileri </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Joint-Probability">Joint Probability </a></li>
-<li class="toc-entry toc-h3"><a href="#Conditional-Probability">Conditional Probability </a></li>
-<li class="toc-entry toc-h3"><a href="#Bayes'-theorem">Bayes' theorem </a></li>
-<li class="toc-entry toc-h3"><a href="#Marginalization">Marginalization </a></li>
-<li class="toc-entry toc-h3"><a href="#Independence">Independence </a></li>
-<li class="toc-entry toc-h3"><a href="#Application">Application </a></li>
+<li class="toc-entry toc-h3"><a href="#Ortak-Olas%C4%B1l%C4%B1k-(Joint-Probability)">Ortak Olasılık (Joint Probability) </a></li>
+<li class="toc-entry toc-h3"><a href="#%C5%9Eartl%C4%B1-Olas%C4%B1l%C4%B1k-(Conditional-Probability)">Şartlı Olasılık (Conditional Probability) </a></li>
+<li class="toc-entry toc-h3"><a href="#Bayes-Teoremi">Bayes Teoremi </a></li>
+<li class="toc-entry toc-h3"><a href="#Ay%C4%B1rma-(Marginalization)">Ayırma (Marginalization) </a></li>
+<li class="toc-entry toc-h3"><a href="#Ba%C4%9F%C4%B1ms%C4%B1zl%C4%B1k-(Independence)">Bağımsızlık (Independence) </a></li>
+<li class="toc-entry toc-h3"><a href="#Uygulamalar">Uygulamalar </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#Expectation-and-Variance">Expectation and Variance </a></li>
-<li class="toc-entry toc-h2"><a href="#Summary">Summary </a></li>
-<li class="toc-entry toc-h2"><a href="#Exercises">Exercises </a></li>
+<li class="toc-entry toc-h2"><a href="#Beklenen-De%C4%9Fer-ve-Varyans-(Expectation-and-Variance)">Beklenen Değer ve Varyans (Expectation and Variance) </a></li>
+<li class="toc-entry toc-h2"><a href="#%C3%96zet">Özet </a></li>
+<li class="toc-entry toc-h2"><a href="#Al%C4%B1%C5%9Ft%C4%B1rmalar">Alıştırmalar </a></li>
 </ul>
 <!--
 #################################################
@@ -3819,27 +3819,23 @@ olayı veya tek sayı gelmesi yani $\{1, 3, 5\}$ olayı gibi. Eğer gözlem sonu
 <h2 id="Rassal-Değişkenlerin-Birbiriyle-İlişkileri">
 <a class="anchor" href="#Rassal-De%C4%9Fi%C5%9Fkenlerin-Birbiriyle-%C4%B0li%C5%9Fkileri" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rassal Değişkenlerin Birbiriyle İlişkileri<a class="anchor-link" href="#Rassal-De%C4%9Fi%C5%9Fkenlerin-Birbiriyle-%C4%B0li%C5%9Fkileri"> </a>
 </h2>
-<p>Very often, we will want to consider more than one random variable at a time.
-For instance, we may want to model the relationship between diseases and symptoms. Given a disease and a symptom, say "flu" and "cough", either may or may not occur in a patient with some probability. While we hope that the probability of both would be close to zero, we may want to estimate these probabilities and their relationships to each other so that we may apply our inferences to effect better medical care.</p>
-<p>As a more complicated example, images contain millions of pixels, thus millions of random variables. And in many cases images will come with a
-label, identifying objects in the image. We can also think of the label as a
-random variable. We can even think of all the metadata as random variables
-such as location, time, aperture, focal length, ISO, focus distance, and camera type.
-All of these are random variables that occur jointly. When we deal with multiple random variables, there are several quantities of interest.</p>
-<h3 id="Joint-Probability">
-<a class="anchor" href="#Joint-Probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Joint Probability<a class="anchor-link" href="#Joint-Probability"> </a>
+<p>Genellikle birden fazla rassal değişkeni bir arada  inceleriz. Örneğin Grip ile öksürük gibi belli bir hastalık ile bir belirtinin hastalarda ayrı ayrı ve bir arada görülmesi olasılıkları üzerinden ilişkileri incelenebilir. Bu sayede daha etkin tedavi için çıkarımlar yaılabilir.</p>
+<p>Daha karmaşık bir örnek olarak milyonlarca ikselden oluşan resimleri ele alalım. Piksellerin renk değerleri birer rassal değişken olarak görülebilir. Ayrıca resimleri belirten etiketler, yer, konum gibi diğer veriler de birer rassal değişken olarak düşünülebilir. Tüm bu rassal değişkenler bir arada yer alr. Rassal değişkenlerin bir birlerine göre durumlarını incelerken birçok nicelik kullanırız, şimdi bunları görelim.</p>
+<h3 id="Ortak-Olasılık-(Joint-Probability)">
+<a class="anchor" href="#Ortak-Olas%C4%B1l%C4%B1k-(Joint-Probability)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ortak Olasılık (Joint Probability)<a class="anchor-link" href="#Ortak-Olas%C4%B1l%C4%B1k-(Joint-Probability)"> </a>
 </h3>
-<p>The first is called the <em>joint probability</em> $P(A = a, B=b)$. Given any values $a$ and $b$, the joint probability lets us answer, what is the probability that $A=a$ and $B=b$ simultaneously?
+<p>İlkine <em>ortak olasılık</em> denir ve $P(A = a, B=b)$ ile gösterilir. Belli $a$ ve $b$ değerleri için ortak olasılık bize aynı anda $A=a$ ve $B=b$ olması olasılığını verir. Burada her $a$ ve $b$ için  $P(A=a, B=b) \leq P(A=a)$ olur. Çünkü</p>
+<p>The first is called the <em>joint probability</em> $P(A = a, B=b)$. Given any values $a$ and $b$, the joint probability lets us answer, what is the probability that $A=a$ and $B=b$ simultaneously? 
 Note that for any values $a$ and $b$, $P(A=a, B=b) \leq P(A=a)$.
 This has to be the case, since for $A=a$ and $B=b$ to happen, $A=a$ has to happen <em>and</em> $B=b$ also has to happen (and vice versa). Thus, $A=a$ and $B=b$ cannot be more likely than $A=a$ or $B=b$ individually.</p>
-<h3 id="Conditional-Probability">
-<a class="anchor" href="#Conditional-Probability" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditional Probability<a class="anchor-link" href="#Conditional-Probability"> </a>
+<h3 id="Şartlı-Olasılık-(Conditional-Probability)">
+<a class="anchor" href="#%C5%9Eartl%C4%B1-Olas%C4%B1l%C4%B1k-(Conditional-Probability)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Şartlı Olasılık (Conditional Probability)<a class="anchor-link" href="#%C5%9Eartl%C4%B1-Olas%C4%B1l%C4%B1k-(Conditional-Probability)"> </a>
 </h3>
 <p>This brings us to an interesting ratio: $0 \leq \frac{P(A=a, B=b)}{P(A=a)} \leq 1$. We call this ratio a <em>conditional probability</em>
 and denote it by $P(B=b \mid A=a)$: it is the probability of $B=b$, provided that
 $A=a$ has occurred.</p>
-<h3 id="Bayes'-theorem">
-<a class="anchor" href="#Bayes'-theorem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayes' theorem<a class="anchor-link" href="#Bayes'-theorem"> </a>
+<h3 id="Bayes-Teoremi">
+<a class="anchor" href="#Bayes-Teoremi" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bayes Teoremi<a class="anchor-link" href="#Bayes-Teoremi"> </a>
 </h3>
 <p>Using the definition of conditional probabilities, we can derive one of the most useful and celebrated equations in statistics: <em>Bayes' theorem</em>.
 It goes as follows.
@@ -3848,8 +3844,8 @@ By construction, we have the <em>multiplication rule</em> that $P(A, B) = P(B \m
 $$P(A \mid B) = \frac{P(B \mid A) P(A)}{P(B)}.$$
 </p>
 <p>Note that here we use the more compact notation where $P(A, B)$ is a <em>joint distribution</em> and $P(A \mid B)$ is a <em>conditional distribution</em>. Such distributions can be evaluated for particular values $A = a, B=b$.</p>
-<h3 id="Marginalization">
-<a class="anchor" href="#Marginalization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Marginalization<a class="anchor-link" href="#Marginalization"> </a>
+<h3 id="Ayırma-(Marginalization)">
+<a class="anchor" href="#Ay%C4%B1rma-(Marginalization)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ayırma (Marginalization)<a class="anchor-link" href="#Ay%C4%B1rma-(Marginalization)"> </a>
 </h3>
 <p>Bayes' theorem is very useful if we want to infer one thing from the other, say cause and effect, but we only know the properties in the reverse direction, as we will see later in this section. One important operation that we need, to make this work, is <em>marginalization</em>.
 It is the operation of determining $P(B)$ from $P(A, B)$. We can see that the probability of $B$ amounts to accounting for all possible choices of $A$ and aggregating the joint probabilities over all of them:</p>
@@ -3857,8 +3853,8 @@ It is the operation of determining $P(B)$ from $P(A, B)$. We can see that the pr
 $$P(B) = \sum_{A} P(A, B),$$
 </p>
 <p>which is also known as the <em>sum rule</em>. The probability or distribution as a result of marginalization is called a <em>marginal probability</em> or a <em>marginal distribution</em>.</p>
-<h3 id="Independence">
-<a class="anchor" href="#Independence" aria-hidden="true"><span class="octicon octicon-link"></span></a>Independence<a class="anchor-link" href="#Independence"> </a>
+<h3 id="Bağımsızlık-(Independence)">
+<a class="anchor" href="#Ba%C4%9F%C4%B1ms%C4%B1zl%C4%B1k-(Independence)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bağımsızlık (Independence)<a class="anchor-link" href="#Ba%C4%9F%C4%B1ms%C4%B1zl%C4%B1k-(Independence)"> </a>
 </h3>
 <p>Another useful property to check for is <em>dependence</em> vs. <em>independence</em>.
 Two random variables $A$ and $B$ being independent
@@ -3869,8 +3865,8 @@ In all the other cases we call $A$ and $B$ dependent. For instance, two successi
 <p>Since $P(A \mid B) = \frac{P(A, B)}{P(B)} = P(A)$ is equivalent to $P(A, B) = P(A)P(B)$, two random variables are independent if and only if their joint distribution is the product of their individual distributions.
 Likewise, two random variables $A$ and $B$ are <em>conditionally independent</em> given another random variable $C$
 if and only if $P(A, B \mid C) = P(A \mid C)P(B \mid C)$. This is expressed as $A \perp B \mid C$.</p>
-<h3 id="Application">
-<a class="anchor" href="#Application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Application<a class="anchor-link" href="#Application"> </a>
+<h3 id="Uygulamalar">
+<a class="anchor" href="#Uygulamalar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uygulamalar<a class="anchor-link" href="#Uygulamalar"> </a>
 </h3>
 <p><img class="emoji" title=":label:" alt=":label:" src="https://github.githubassets.com/images/icons/emoji/unicode/1f3f7.png" height="20" width="20"><code>subsec_probability_hiv_app</code></p>
 <p>Let us put our skills to the test. Assume that a doctor administers an AIDS test to a patient. This test is fairly accurate and it fails only with 1% probability if the patient is healthy but reporting him as diseased. Moreover,
@@ -3964,8 +3960,8 @@ $$\begin{aligned}
 =&amp; 0.8307.
 \end{aligned}
 $$<p>That is, the second test allowed us to gain much higher confidence that not all is well. Despite the second test being considerably less accurate than the first one, it still significantly improved our estimate.</p>
-<h2 id="Expectation-and-Variance">
-<a class="anchor" href="#Expectation-and-Variance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Expectation and Variance<a class="anchor-link" href="#Expectation-and-Variance"> </a>
+<h2 id="Beklenen-Değer-ve-Varyans-(Expectation-and-Variance)">
+<a class="anchor" href="#Beklenen-De%C4%9Fer-ve-Varyans-(Expectation-and-Variance)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Beklenen Değer ve Varyans (Expectation and Variance)<a class="anchor-link" href="#Beklenen-De%C4%9Fer-ve-Varyans-(Expectation-and-Variance)"> </a>
 </h2>
 <p>To summarize key characteristics of probability distributions,
 we need some measures.
@@ -3987,16 +3983,16 @@ as different values $x$ of the random variable are sampled from its distribution
 <p>
 $$\mathrm{Var}[f(x)] = E\left[\left(f(x) - E[f(x)]\right)^2\right].$$
 </p>
-<h2 id="Summary">
-<a class="anchor" href="#Summary" aria-hidden="true"><span class="octicon octicon-link"></span></a>Summary<a class="anchor-link" href="#Summary"> </a>
+<h2 id="Özet">
+<a class="anchor" href="#%C3%96zet" aria-hidden="true"><span class="octicon octicon-link"></span></a>Özet<a class="anchor-link" href="#%C3%96zet"> </a>
 </h2>
 <ul>
 <li>We can sample from probability distributions.</li>
 <li>We can analyze multiple random variables using joint distribution, conditional distribution, Bayes' theorem, marginalization, and independence assumptions.</li>
 <li>Expectation and variance offer useful measures to summarize key characteristics of probability distributions.</li>
 </ul>
-<h2 id="Exercises">
-<a class="anchor" href="#Exercises" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exercises<a class="anchor-link" href="#Exercises"> </a>
+<h2 id="Alıştırmalar">
+<a class="anchor" href="#Al%C4%B1%C5%9Ft%C4%B1rmalar" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alıştırmalar<a class="anchor-link" href="#Al%C4%B1%C5%9Ft%C4%B1rmalar"> </a>
 </h2>
 <ol>
 <li>We conducted $m=500$ groups of experiments where each group draws $n=10$ samples. Vary $m$ and $n$. Observe and analyze the experimental results.</li>
