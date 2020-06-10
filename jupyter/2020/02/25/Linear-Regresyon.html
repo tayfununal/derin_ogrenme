@@ -115,7 +115,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      21 min read
+      20 min read
     
 </span></p>
 
@@ -197,42 +197,13 @@ window.onload = wrap_img;
 <a class="anchor" href="#Linear-Regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Regression<a class="anchor-link" href="#Linear-Regression"> </a>
 </h1>
 <p><em>Regresyon</em>, bir veya daha fazla bağımsız değişkenle bir bağımlı değişkenin ilişkisini modelleyen metodlara verilen genel isimdir. Doğa bilimlerinde ve sosyal bilimlerde regresyonun amacı genellikle girdiler ve çıktılar arasındaki bağı karakterize etmektir. Buna karşın Makine Öğrenmesi ise çoğunlukla <em>tahmin</em> ile ilgilidir.</p>
-<p>Ne zaman sayısal bir değeri tahmin etmek istesek regresyon karşımıza çıkar. Yaygın örnekler arasında fiyat tahmini (ev, hisse senedi gibi), bir yerde kalma süresinin tahmini (hastanede kalma süresi gibi), arz tahmini (emlak satışları için) vardır. Her tahmin problemi regresyon problemi değildir. İleriki bölümlerde sınıflandırma problemlerini inceleyeceğiz. Sınıflandırmada amaç kategoriler arasından doğru olanı tahmin etmedir, dolayısıyla regresyon prblemi değildir.</p>
+<p>Ne zaman sayısal bir değeri tahmin etmek istesek regresyon karşımıza çıkar. Yaygın örnekler arasında fiyat tahmini (ev, hisse senedi gibi), bir yerde kalma süresinin tahmini (hastanede kalma süresi gibi), arz tahmini (emlak satışları için) vardır. Her tahmin problemi regresyon problemi değildir. İleriki bölümlerde sınıflandırma problemlerini inceleyeceğiz. Sınıflandırmada amaç kategoriler arasından doğru olanı tahmin etmedir, dolayısıyla regresyon problemi değildir.</p>
 <h2 id="Basic-Elements-of-Linear-Regression">
 <a class="anchor" href="#Basic-Elements-of-Linear-Regression" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Elements of Linear Regression<a class="anchor-link" href="#Basic-Elements-of-Linear-Regression"> </a>
 </h2>
-<p><em>Linear regression</em> may be both the simplest
-and most popular among the standard tools to regression.
-Dating back to the dawn of the 19th century,
-linear regression flows from a few simple assumptions.
-First, we assume that the relationship between
-the independent variables $\mathbf{x}$ and the dependent variable $y$ is linear,
-i.e., that $y$ can be expressed as a weighted sum
-of the elements in $\mathbf{x}$,
-given some noise on the observations.
-Second, we assume that any noise is well-behaved
-(following a Gaussian distribution).</p>
-<p>To motivate the approach, let us start with a running example.
-Suppose that we wish to estimate the prices of houses (in dollars)
-based on their area (in square feet) and age (in years).
-To actually fit a model for predicting house prices,
-we would need to get our hands on a dataset
-consisting of sales for which we know
-the sale price, area, and age for each home.
-In the terminology of machine learning,
-the dataset is called a <em>training data set</em> or <em>training set</em>,
-and each row (here the data corresponding to one sale)
-is called an <em>example</em> (or <em>data instance</em>, <em>data point</em>, <em>sample</em>).
-The thing we are trying to predict (price)
-is called a <em>label</em> (or <em>target</em>).
-The independent variables (age and area)
-upon which the predictions are based
-are called <em>features</em> (or <em>covariates</em>).</p>
-<p>Typically, we will use $n$ to denote
-the number of examples in our dataset.
-We index the data instances by $i$, denoting each input
-as $\mathbf{x}^{(i)} = [x_1^{(i)}, x_2^{(i)}]^\top$
-and the corresponding label as $y^{(i)}$.</p>
+<p><em>Lineer regresyon</em>, standart regresyon araçları arasında hem en popüler hem de en basit olanıdır. Geçmişi 19. Yüzyıla dayanan lineer regresyon basit bir kabülden yola çıkar. Öncelikle $\mathbf{x}$ bağımsız değişkenleri ile $y$ bağımlı deişkeninin lineer olarak bağlantılı olduğunu kabul ederiz. Yani $y$ değişkeni $\mathbf{x}$ vektörünün bileşenlerinin lineer birleşimi ile gözlem hatasınının toplamıdır. İkincisi gözlem hatası düzenlidir, özel olarak Gauss dağılımına sahiptir.</p>
+<p>Amacımızı daha iyi ifade etmek için bir örnek kullanalım. Ev fiyatlarını metrekaresine ve yaşına göre tahmin etmek istiyoruz. Bu kestirimi yapabilmek amacıyla uygulayacağımız model için fiyatını, metrekaresini ve yaşını bildiğimiz satış verisine (data set) ihtiyacımız var. Makine Öğrenmesi terminolojisinde veriye <em>eğitim seti</em> (training set) ve bu kümenin elemanlarına (bu örnekte her bir satış oluyor) bir <em>örnek</em> ya da <em>veri noktası</em> denir. Bu örnekteki fiyat gibi tahmin etmeye çalıştığımız şeye <em>etiket</em> (label) ya da <em>hedef</em> (target) denir. Örneğimizdeki evin metrekaresi ve yaşı gibi bağımsız değişkenlere <em>özellikler</em> (features) denir.</p>
+<p>Veri kümemizdeki örneklerin sayısını $n$ ile gösteriyoruz. Veri örneklerinin indekslemek için $i$ harfini kullanacağız. Dolayısyla $y^{(i)}$ etiketine karşılık gelen özellikler $\mathbf{x}^{(i)} = [x_1^{(i)}, x_2^{(i)}]^\top$ ile gösterilecektir.</p>
 <h3 id="Linear-Model">
 <a class="anchor" href="#Linear-Model" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linear Model<a class="anchor-link" href="#Linear-Model"> </a>
 </h3>
